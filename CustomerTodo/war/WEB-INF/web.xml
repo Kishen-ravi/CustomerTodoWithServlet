@@ -14,7 +14,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Logout</servlet-name>
-		<servlet-class>com.custTODO.LogoutServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.LogoutServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Logout</servlet-name>
@@ -22,7 +22,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Login</servlet-name>
-		<servlet-class>com.custTODO.LoginServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
@@ -30,7 +30,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>CreateCustomer</servlet-name>
-		<servlet-class>com.custTODO.CreateCustomerServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.CreateCustomerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateCustomer</servlet-name>
@@ -38,7 +38,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>CreateList</servlet-name>
-		<servlet-class>com.custTODO.CreateListServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.CreateListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateList</servlet-name>
@@ -46,7 +46,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>LoadCustomer</servlet-name>
-		<servlet-class>com.custTODO.LoadCustomerServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.LoadCustomerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoadCustomer</servlet-name>
@@ -54,7 +54,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>LoadTodo</servlet-name>
-		<servlet-class>com.custTODO.LoadListServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.LoadListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoadTodo</servlet-name>

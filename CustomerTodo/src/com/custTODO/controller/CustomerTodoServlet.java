@@ -1,4 +1,4 @@
-package com.custTODO;
+package com.custTODO.controller;
 
 import java.io.IOException;
 import java.util.List;
