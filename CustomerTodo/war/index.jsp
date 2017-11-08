@@ -3,14 +3,19 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Hello App Engine</title>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/jquery-3.2.1.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/cssLoginPage.css" />
 </head>
 
-<% if(session!=null && session.getAttribute("sessionname")!=null){
-	  response.sendRedirect("todolist-home.jsp");
+<% if(session!=null && session.getAttribute("sessionemail")!=null){
+	String cusName=session.getAttribute("sessionname").toString();
+	String cusEmail=session.getAttribute("sessionemail").toString();
+	RequestDispatcher dispatcher = request.getRequestDispatcher("todolist-home.jsp");
+	request.setAttribute("User", cusName);
+	request.setAttribute("Email", cusEmail);
+	dispatcher.forward( request, response );
+	  /* response.sendRedirect("todolist-home.jsp"); */
   }
   else{
 	%>

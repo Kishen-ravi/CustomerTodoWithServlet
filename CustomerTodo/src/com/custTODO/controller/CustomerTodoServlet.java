@@ -48,8 +48,8 @@ public class CustomerTodoServlet extends HttpServlet {
 				admin.setCustEmail(cusEmail);
 				admin.setCustPassword(cusPassword);
 				pm.makePersistent(admin);
-				errsession.setAttribute("sessionname", cusEmail);
-				
+				errsession.setAttribute("sessionemail", cusEmail);
+				errsession.setAttribute("sessionname", cusName);
 		        GoogleMailAPI mail = new GoogleMailAPI();
 		        mail.MailAPI(cusEmail);
 		        RequestDispatcher dispatcher = req.getRequestDispatcher("todolist-home.jsp");

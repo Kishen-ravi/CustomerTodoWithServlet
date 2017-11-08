@@ -21,7 +21,7 @@ public class LoadCustomerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		HttpSession session = req.getSession();
-		String custEmail = session.getAttribute("sessionname").toString();
+		String custEmail = session.getAttribute("sessionemail").toString();
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		PrintWriter out = res.getWriter();
 		String output = "";

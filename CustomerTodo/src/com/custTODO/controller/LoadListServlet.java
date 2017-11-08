@@ -21,7 +21,7 @@ public class LoadListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		HttpSession session = req.getSession();
-		String custEmail = session.getAttribute("sessionname").toString();
+		String custEmail = session.getAttribute("sessionemail").toString();
 //		String custKey = req.getParameter("data");
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		PrintWriter out = res.getWriter();

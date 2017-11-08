@@ -48,7 +48,7 @@ public class CreateListServlet extends HttpServlet {
 
 			if (!(result.isEmpty())) {
 				TodoListJDO todoList = pm.getObjectById(TodoListJDO.class, result.get(0).getKey());
-				todoList.setAdminEmail(session.getAttribute("sessionname").toString());
+				todoList.setAdminEmail(session.getAttribute("sessionemail").toString());
 				todoList.setCustKey(customerID);
 				todoList.setTask(listNote);
 				todoList.setListId(listID);
@@ -59,7 +59,7 @@ public class CreateListServlet extends HttpServlet {
 			} else {
 				System.out.println("TodoListJDO");
 				TodoListJDO todoList = new TodoListJDO();
-				todoList.setAdminEmail(session.getAttribute("sessionname").toString());
+				todoList.setAdminEmail(session.getAttribute("sessionemail").toString());
 				todoList.setCustKey(customerID);
 				todoList.setTask(listNote);
 				todoList.setListId(listID);

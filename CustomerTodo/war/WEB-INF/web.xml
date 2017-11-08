@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>CustomerTodoServlet</servlet-name>
-		<servlet-class>com.custTODO.CustomerTodoServlet</servlet-class>
+		<servlet-class>com.custTODO.controller.CustomerTodoServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CustomerTodoServlet</servlet-name>

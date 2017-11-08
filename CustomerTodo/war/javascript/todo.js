@@ -160,7 +160,7 @@ function storeCustomer(id,fname,lname,email,mobile)
 //			} else {
 //			custAdded(id.value, email.value,
 //					firstName.value, phoNumber.value, lastName.value);
-				alertPopUp("Contact Created");
+//				alertPopUp("Contact Created");
 
 //			}
 		},

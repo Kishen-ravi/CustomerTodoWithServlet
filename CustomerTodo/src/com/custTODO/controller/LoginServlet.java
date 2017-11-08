@@ -31,7 +31,9 @@ public class LoginServlet extends HttpServlet {
 			List<LoginJDO> result = (List<LoginJDO>) q.execute();
 			if (!(result.isEmpty())) {
 				String cusName = result.get(0).getCustName();
-				session.setAttribute("sessionname", cusEmail);
+				session.setAttribute("sessionemail", cusEmail);
+				session.setAttribute("sessionname", cusName);
+				
 				RequestDispatcher dispatcher = req.getRequestDispatcher("todolist-home.jsp");
 				req.setAttribute("User", cusName);
 				req.setAttribute("Email", cusEmail);

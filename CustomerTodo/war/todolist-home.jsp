@@ -3,10 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script type="text/javascript" src="javascript/jquery-3.2.1.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Home Page</title>
-	<link rel="stylesheet" type="text/css" href="todo.css">
+	<link rel="stylesheet" type="text/css" href="css/todo.css">
 </head>
 <body>
 	<h3>Customer Todo List</h3>
@@ -74,6 +74,6 @@
 	    </div>
 	    <div id="pageBlockNewCustomer" style="display: none;"></div>
 	</div>
-	<script src="todo.js"></script>
+	<script src="javascript/todo.js"></script>
 </body>
 </html>

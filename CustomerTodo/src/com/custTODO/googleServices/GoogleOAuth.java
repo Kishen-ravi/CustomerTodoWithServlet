@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -70,10 +71,6 @@ public class GoogleOAuth  extends HttpServlet {
 	        loginId 	= getParamfromJSON(outputString,"email");
 
 	        System.out.println("Username = "+username + "  loginId"+ loginId);
-	// for mail API
-	        GoogleMailAPI MailAPI = new GoogleMailAPI();
-	         MailAPI.MailAPI(loginId);
-	        
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -89,16 +86,29 @@ public class GoogleOAuth  extends HttpServlet {
 				q.setFilter("custEmail == '" + custEmail + "'");
 				List<LoginJDO> result = (List<LoginJDO>) q.execute();
 				if (!(result.isEmpty())) {
-					session.setAttribute("sessionname", custEmail);
-					res.sendRedirect("todolist-home.jsp");
+					session.setAttribute("sessionemail", custEmail);
+					session.setAttribute("sessionname", custName);
+					RequestDispatcher dispatcher = req.getRequestDispatcher("todolist-home.jsp");
+					req.setAttribute("User", custName);
+					req.setAttribute("Email", custEmail);
+					dispatcher.forward( req, res );
 				} else {
+					// for mail API
+					GoogleMailAPI MailAPI = new GoogleMailAPI();
+			         MailAPI.MailAPI(loginId);
+			         
 					LoginJDO admin = new LoginJDO();
 					admin.setCustName(custName);
 					admin.setCustEmail(custEmail);
 					// admin.setCustPassword(cusPassword);
 					pm.makePersistent(admin);
-					session.setAttribute("sessionname", custEmail);
-					res.sendRedirect("todolist-home.jsp");
+					
+					session.setAttribute("sessionemail", custEmail);
+					session.setAttribute("sessionname", custName);
+					RequestDispatcher dispatcher = req.getRequestDispatcher("todolist-home.jsp");
+					req.setAttribute("User", custName);
+					req.setAttribute("Email", custEmail);
+					dispatcher.forward( req, res );
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

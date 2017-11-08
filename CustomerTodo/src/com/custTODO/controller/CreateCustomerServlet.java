@@ -43,13 +43,13 @@ public class CreateCustomerServlet extends HttpServlet {
 			System.out.println("fname :" + customerFName + " and email :" + customerEmail);
 
 			Query q = pm.newQuery(CustomerJDO.class);
-			q.setFilter("adminEmail =='" + session.getAttribute("sessionname").toString() + "' && id =='"
+			q.setFilter("adminEmail =='" + session.getAttribute("sessionemail").toString() + "' && id =='"
 					+ customerID + "'");
 			List<CustomerJDO> result = (List<CustomerJDO>) q.execute();
 
 			if (!(result.isEmpty())) {
 				CustomerJDO customer = pm.getObjectById(CustomerJDO.class, result.get(0).getKey());
-				customer.setAdminEmail(session.getAttribute("sessionname").toString());
+				customer.setAdminEmail(session.getAttribute("sessionemail").toString());
 				customer.setId(customerID);
 				customer.setFirstName(customerFName);
 				customer.setEmail(customerEmail);
@@ -60,7 +60,7 @@ public class CreateCustomerServlet extends HttpServlet {
 			} else {
 				System.out.println("customerJDO");
 				CustomerJDO customer = new CustomerJDO();
-				customer.setAdminEmail(session.getAttribute("sessionname").toString());
+				customer.setAdminEmail(session.getAttribute("sessionemail").toString());
 				customer.setId(customerID);
 				customer.setFirstName(customerFName);
 				customer.setEmail(customerEmail);
